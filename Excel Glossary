@@ -1,0 +1,20 @@
+//This code creates new sheets so you can create a quick one click travel between different pages
+
+Sub add_new_sheet()
+Dim sheet_name_to_create As String
+Dim sh As Worksheet
+Dim oRng As Range
+
+
+
+sheet_name_to_create = ActiveCell.Value
+Set oRng = ActiveCell
+Set sh = Sheets("Master Dashboard")
+Sheets.Add(After:=Sheets(Sheets.Count)).Name = sheet_name_to_create
+sh.Activate
+sh.Hyperlinks.Add oRng, "", "'" & sheet_name_to_create & "'!A1", _
+"Go to " & sheet_name_to_create, sheet_name_to_create
+
+Set oRng = Nothing
+
+End Sub
