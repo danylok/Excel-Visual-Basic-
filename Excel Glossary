@@ -1,4 +1,4 @@
-//This code creates new sheets so you can create a quick one click travel between different pages
+//This code creates new sheets so you can create a quick one click travel between different pages. Type the name of the sheet you want. Run the macro on the cell. You will see the hyperlink pop up then press it and new sheet will be created and your path button is created.
 
 Sub add_new_sheet()
 Dim sheet_name_to_create As String
@@ -9,6 +9,9 @@ Dim oRng As Range
 
 sheet_name_to_create = ActiveCell.Value
 Set oRng = ActiveCell
+
+//"Master Dashboard is the name of the main sheet where the main directory is" 
+
 Set sh = Sheets("Master Dashboard")
 Sheets.Add(After:=Sheets(Sheets.Count)).Name = sheet_name_to_create
 sh.Activate
